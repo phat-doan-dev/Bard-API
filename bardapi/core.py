@@ -17,6 +17,7 @@ class Bard:
         token: str = None,
         timeout: int = 20,
         proxies: dict = None,
+        conversation_id: str = None,
         session: requests.Session = None,
     ):
         """
@@ -32,7 +33,7 @@ class Bard:
         self.proxies = proxies
         self.timeout = timeout
         self._reqid = int("".join(random.choices(string.digits, k=4)))
-        self.conversation_id = ""
+        self.conversation_id = conversation_id
         self.response_id = ""
         self.choice_id = ""
         # Set session or Get session
